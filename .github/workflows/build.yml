@@ -1,0 +1,21 @@
+name: Build WinThin
+
+jobs:
+  build:
+    runs-on: windows-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      
+      - name: Build WinThin
+        run: ./build.ps1
+
+      - name: Upload artifact
+        uses: actions/upload-artifact@v4
+        with:
+          path: |
+            winthin.wim
+
+on:
+  workflow_dispatch:
