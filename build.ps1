@@ -35,4 +35,4 @@ Optimize-WindowsImage -Path $mountDir -OptimizationTarget WIMBoot
 Dismount-WindowsImage -Path $mountDir -Save
 
 # Export the modified Windows image to a new WIM file
-Export-WindowsImage -SourceImagePath $imagePath -SourceIndex $index -DestinationImagePath winthin.wim
+Export-WindowsImage -SourceImagePath $imagePath -SourceIndex $index -CompressionType maximum -DestinationImagePath winthin.wim
